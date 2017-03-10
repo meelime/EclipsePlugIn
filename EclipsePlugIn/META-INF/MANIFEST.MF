@@ -4,3 +4,6 @@ Bundle-Name: EclipsePlugIn
 Bundle-SymbolicName: EclipsePlugIn
 Bundle-Version: 1.0.0.qualifier
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui;bundle-version="3.108.1",
+ org.eclipse.swt.tools;bundle-version="3.105.2",
+ org.eclipse.core.runtime
