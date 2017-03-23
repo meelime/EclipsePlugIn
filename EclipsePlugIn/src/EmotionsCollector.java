@@ -18,9 +18,10 @@ import org.eclipse.swt.layout.GridLayout;
 
 public class EmotionsCollector{
 	public static int EMOTION_VALUE;
+	public static boolean DEBUG_MODE = false;
 	public static void main(String[] args) {
 		EMOTION_VALUE = 10; //max value for emotion = happy
-		HttpHelper httpHelper = new HttpHelper();
+		HttpHelper httpHelper = new HttpHelper(DEBUG_MODE);
 		Display display = new Display();
 		GridLayout gridLayout = new GridLayout();
 		GridData gridData = new GridData();
@@ -31,8 +32,10 @@ public class EmotionsCollector{
 			public void widgetSelected(SelectionEvent event){
 				Button bt = ((Button) event.widget);
 				if(bt.getSelection()){
-					System.out.print(bt.getText());
-					System.out.println(" selected = " + bt.getSelection());
+					if(DEBUG_MODE){
+						System.out.print("[EMOTIONSCOLLECTOR-WIDGETSELECTED] : "+bt.getText());
+						System.out.println(" selected = " + bt.getSelection());
+					}
 					if(bt.getText().equals("Happy :)")){
 						EMOTION_VALUE = 10;
 					}else if(bt.getText().equals("Indifferent :|")){
@@ -68,7 +71,8 @@ public class EmotionsCollector{
 			public void handleEvent(Event event) {
 				switch (event.type) {
 				case SWT.Selection:
-					System.out.println("Bn pressed with emotion selected = "+EMOTION_VALUE);
+					if(DEBUG_MODE)
+						System.out.println("[EMOTIONSCOLLECTOR-HANDLEEVENT] : Bn pressed with emotion selected = "+EMOTION_VALUE);
 					httpHelper.sendEmotion(EMOTION_VALUE);
 					break;
 
