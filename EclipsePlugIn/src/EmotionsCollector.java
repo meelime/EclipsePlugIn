@@ -18,7 +18,7 @@ import org.eclipse.swt.layout.GridLayout;
 
 public class EmotionsCollector{
 	public static int EMOTION_VALUE;
-	public static boolean DEBUG_MODE = false;
+	public static boolean DEBUG_MODE = true;
 	public static void main(String[] args) {
 		EMOTION_VALUE = 10; //max value for emotion = happy
 		HttpHelper httpHelper = new HttpHelper(DEBUG_MODE);

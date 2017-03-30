@@ -15,7 +15,7 @@ import java.util.TimeZone;
 import org.json.simple.JSONObject;
 
 public class HttpHelper {
-	public static String IP_SERVER = "10.128.25.166";
+	public static String IP_SERVER = "10.128.24.208";
 	private boolean isDebugMode = false;
 	public HttpHelper(boolean isDebugMode){
 		this.isDebugMode = isDebugMode;
