@@ -15,7 +15,7 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-
+// test push for Jenkins
 public class EmotionsCollector{
 	public static int EMOTION_VALUE;
 	public static boolean DEBUG_MODE = true;
